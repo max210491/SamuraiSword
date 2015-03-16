@@ -10,7 +10,7 @@ package samuraysword;
  * @author Mirko
  */
 public class Carta {
-    String nome;
+    public String nome;
     public Carta(String s){
         nome=s;
     }

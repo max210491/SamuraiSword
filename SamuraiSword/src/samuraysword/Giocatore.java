@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import samuraysword.carte.Ruolo;
 
 public class Giocatore {
-    String nome;
-    Ruolo ruolo;
-    Carta personaggio;
-    ArrayList<Carta> mano =new ArrayList<Carta>();
-    public Giocatore(String s,Ruolo r,Carta p){
+    public String nome;
+    public Ruolo ruolo;
+    public ArrayList<Carta> mano =new ArrayList<Carta>();
+    public int resistenza;
+    public int resistenzaMax;
+    ArrayList<Carta> Buff =new ArrayList<Carta>();
+    public Giocatore(String s){
         nome=s;
-        ruolo=r;
-        personaggio=p;
     }
 }
