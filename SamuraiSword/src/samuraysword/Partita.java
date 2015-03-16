@@ -23,6 +23,13 @@ public class Partita {
     int turno=0;
     public Partita(){
         preparativi();
+        for(int i=0;i<giocatori.size();i++){
+            Giocatore t=giocatori.get(i);
+            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
+            for(int j=0;j<t.mano.size();j++){
+                System.out.println("\t"+t.mano.get(j).nome);
+            }
+        }
     }
     public void preparativi(){
         for(int i=0;i<60;i++)

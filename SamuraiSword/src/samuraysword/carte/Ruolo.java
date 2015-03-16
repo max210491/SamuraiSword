@@ -12,7 +12,7 @@ import samuraysword.*;
  * @author Mirko
  */
 public class Ruolo extends Carta{
-    int onore;
+    public int onore;
     public Ruolo(String n,int o){
         super(n);
         onore=o;
