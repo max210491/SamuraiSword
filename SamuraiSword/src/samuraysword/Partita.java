@@ -23,24 +23,26 @@ public class Partita {
     int turno=0;
     public Partita(){
         preparativi();
-        for(int i=0;i<giocatori.size();i++){
-            Giocatore t=giocatori.get(i);
-            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
-            for(int j=0;j<t.mano.size();j++){
-                System.out.println("\t"+t.mano.get(j).nome);
-            }
-        }
+        printState();
+        giocatori.get(turno).turno(this);
+        printState();
+        giocatori.get(turno).turno(this);
+        printState();
+        giocatori.get(turno).turno(this);
+        printState();
+        giocatori.get(turno).turno(this);
+        printState();
     }
     public void preparativi(){
         for(int i=0;i<60;i++)
             mazzo.add(new Carta(""+i));
         ArrayList<Carta> temp1=new ArrayList<Carta>();
         temp1.add(new Ruolo("Shogun",5));
-        temp1.add(new Ruolo("Samurai",3));
-        temp1.add(new Ruolo("Samurai",3));
-        temp1.add(new Ruolo("Ronin",3));
-        temp1.add(new Ruolo("Ninja",3));
-        temp1.add(new Ruolo("Ninja",3));
+        temp1.add(new Ruolo("Samurai",4));
+        temp1.add(new Ruolo("Samurai",4));
+        temp1.add(new Ruolo("Ronin",4));
+        temp1.add(new Ruolo("Ninja",4));
+        temp1.add(new Ruolo("Ninja",4));
         
         ArrayList<Giocatore> temp2 = new ArrayList<Giocatore>();
         temp2.add(new Benkei());
@@ -57,12 +59,7 @@ public class Partita {
                 turno=i;
         }
         for(int i=0;i<giocatori.size();i++){
-            for(int j=0;j<5;j++){
-                int rnd=random.nextInt(mazzo.size());
-                Carta t = mazzo.get(rnd);
-                mazzo.remove(rnd);
-                giocatori.get(i).mano.add(t);
-            }
+            giocatori.get((i+turno)%(giocatori.size())).pesca(this,4+((i+1)/2));
         }
     }
     public Giocatore editGiocatore(ArrayList<Carta> temp1,ArrayList<Giocatore> temp2){
@@ -73,5 +70,15 @@ public class Partita {
         temp.ruolo=(Ruolo) temp1.get(rnd1);
         temp1.remove(rnd1);
         return temp;
+    }
+    public void printState(){
+        System.out.println("/////////////////// Turno " + turno+ " /////////////////////////////");
+        for(int i=0;i<giocatori.size();i++){
+            Giocatore t=giocatori.get(i);
+            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
+            for(int j=0;j<t.mano.size();j++){
+                System.out.println("\t"+t.mano.get(j).nome);
+            }
+        }
     }
 }

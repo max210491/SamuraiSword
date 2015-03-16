@@ -6,6 +6,7 @@
 package samuraysword;
 
 import java.util.ArrayList;
+import java.util.Random;
 import samuraysword.carte.Ruolo;
 
 public class Giocatore {
@@ -15,7 +16,19 @@ public class Giocatore {
     public int resistenza;
     public int resistenzaMax;
     ArrayList<Carta> Buff =new ArrayList<Carta>();
+    Random random = new Random();
     public Giocatore(String s){
         nome=s;
+    }
+    public void pesca(Partita p,int n){
+        for(int i=0;i<n;i++){
+            int rnd=random.nextInt(p.mazzo.size());
+            mano.add(p.mazzo.get(rnd));
+            p.mazzo.remove(rnd);
+        }
+    }
+    public void turno(Partita p){
+        pesca(p,2);
+        p.turno=(p.turno+1)%p.giocatori.size();
     }
 }
