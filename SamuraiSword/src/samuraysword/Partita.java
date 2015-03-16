@@ -5,10 +5,11 @@
  */
 package samuraysword;
 
+import samuraysword.carte.personaggio.Chiyome;
+import samuraysword.carte.personaggio.Benkei;
 import java.util.ArrayList;
 import java.util.Random;
 import samuraysword.carte.*;
-import samuraysword.personaggi.*;
 
     
 /**
@@ -22,7 +23,7 @@ public class Partita {
     Random random = new Random();
     int turno=0;
     public Partita(){
-        preparativi();
+//        preparativi();
         printState();
         giocatori.get(turno).turno(this);
         printState();
@@ -33,35 +34,35 @@ public class Partita {
         giocatori.get(turno).turno(this);
         printState();
     }
-    public void preparativi(){
-        for(int i=0;i<60;i++)
-            mazzo.add(new Carta(""+i));
-        ArrayList<Carta> temp1=new ArrayList<Carta>();
-        temp1.add(new Ruolo("Shogun",5));
-        temp1.add(new Ruolo("Samurai",4));
-        temp1.add(new Ruolo("Samurai",4));
-        temp1.add(new Ruolo("Ronin",4));
-        temp1.add(new Ruolo("Ninja",4));
-        temp1.add(new Ruolo("Ninja",4));
-        
-        ArrayList<Giocatore> temp2 = new ArrayList<Giocatore>();
-        temp2.add(new Benkei());
-        temp2.add(new Benkei());
-        temp2.add(new Benkei());
-        temp2.add(new Benkei());
-        temp2.add(new Chiyome());
-        temp2.add(new Chiyome());
-        while(temp1.isEmpty()==false){
-            giocatori.add(editGiocatore(temp1,temp2));
-        }
-        for(int i=0;i<giocatori.size();i++){
-            if(giocatori.get(i).ruolo.nome=="Shogun")
-                turno=i;
-        }
-        for(int i=0;i<giocatori.size();i++){
-            giocatori.get((i+turno)%(giocatori.size())).pesca(this,4+((i+1)/2));
-        }
-    }
+//    public void preparativi(){
+//        for(int i=0;i<60;i++)
+//            mazzo.add(new Carta(""+i));
+//        ArrayList<Carta> temp1=new ArrayList<Carta>();
+//        temp1.add(new Ruolo("Shogun",5));
+//        temp1.add(new Ruolo("Samurai",4));
+//        temp1.add(new Ruolo("Samurai",4));
+//        temp1.add(new Ruolo("Ronin",4));
+//        temp1.add(new Ruolo("Ninja",4));
+//        temp1.add(new Ruolo("Ninja",4));
+//        
+//        ArrayList<Giocatore> temp2 = new ArrayList<Giocatore>();
+//        temp2.add(new Benkei());
+//        temp2.add(new Benkei());
+//        temp2.add(new Benkei());
+//        temp2.add(new Benkei());
+//        temp2.add(new Chiyome());
+//        temp2.add(new Chiyome());
+//        while(temp1.isEmpty()==false){
+//            giocatori.add(editGiocatore(temp1,temp2));
+//        }
+//        for(int i=0;i<giocatori.size();i++){
+//            if(giocatori.get(i).ruolo.nome=="Shogun")
+//                turno=i;
+//        }
+//        for(int i=0;i<giocatori.size();i++){
+//            giocatori.get((i+turno)%(giocatori.size())).pesca(this,4+((i+1)/2));
+//        }
+//    }
     public Giocatore editGiocatore(ArrayList<Carta> temp1,ArrayList<Giocatore> temp2){
         int rnd1=random.nextInt(temp1.size());
         int rnd2=random.nextInt(temp2.size());
@@ -75,10 +76,10 @@ public class Partita {
         System.out.println("/////////////////// Turno " + turno+ " /////////////////////////////");
         for(int i=0;i<giocatori.size();i++){
             Giocatore t=giocatori.get(i);
-            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
-            for(int j=0;j<t.mano.size();j++){
-                System.out.println("\t"+t.mano.get(j).nome);
-            }
+//            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
+//            for(int j=0;j<t.mano.size();j++){
+//                System.out.println("\t"+t.mano.get(j).nome);
+//            }
         }
     }
 }

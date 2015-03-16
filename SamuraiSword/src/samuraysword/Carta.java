@@ -6,12 +6,23 @@
 package samuraysword;
 
 /**
- *
+ * Classe generic per la gestione delle carte
+ * 
  * @author Mirko
  */
-public class Carta {
-    public String nome;
-    public Carta(String s){
-        nome=s;
-    }
+public abstract class Carta {
+    
+    /**
+     * I nomi sono modificabili: ruolo(ronin ecc), personaggio, arma, supporto(carte blu), azione(carte gialle)
+     */
+    public static enum tipo {RUOLO, PERSONAGGIO, ARMA, SUPPORTO, AZIONE};
+    
+    /**
+     * 
+     * @return Il tipo della carta
+     */
+    public abstract tipo getTipo();
+    
+    public abstract String getName();
+    
 }
