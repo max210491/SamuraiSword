@@ -10,7 +10,7 @@ package samuraysword;
  * 
  * @author Mirko
  */
-public abstract class Carta {
+public interface Carta {
     
     /**
      * I nomi sono modificabili: ruolo(ronin ecc), personaggio, arma, supporto(carte blu), azione(carte gialle)

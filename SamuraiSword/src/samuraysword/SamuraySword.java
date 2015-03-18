@@ -5,7 +5,7 @@
  */
 package samuraysword;
 
-import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,4 +18,5 @@ public class SamuraySword {
      //mischia
      //
     }
+    private static final Logger LOG = Logger.getLogger(SamuraySword.class.getName());
 }

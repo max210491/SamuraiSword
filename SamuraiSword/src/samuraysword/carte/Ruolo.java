@@ -13,7 +13,7 @@ import samuraysword.*;
  * 
  * @author Mirko
  */
-public abstract class Ruolo extends Carta{
+public abstract class Ruolo implements Carta{
     
     private int onore;
     

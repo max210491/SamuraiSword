@@ -13,7 +13,7 @@ import samuraysword.partita.SkillCallback;
  * 
  * @author Simo
  */
-public abstract class Personaggio extends Carta implements SkillCallback{
+public abstract class Personaggio implements Carta, SkillCallback{
 
     private String descrizione;
     private final int resistenzaMax;

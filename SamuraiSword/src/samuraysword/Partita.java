@@ -5,10 +5,9 @@
  */
 package samuraysword;
 
-import samuraysword.carte.personaggio.Chiyome;
-import samuraysword.carte.personaggio.Benkei;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Logger;
 import samuraysword.carte.*;
 
     
@@ -17,11 +16,14 @@ import samuraysword.carte.*;
  * @author Mirko
  */
 public class Partita {
-    ArrayList<Carta> mazzo=new ArrayList<Carta>();
-    ArrayList<Carta> scarti=new ArrayList<Carta>();
-    ArrayList<Giocatore> giocatori=new ArrayList<Giocatore>();
+    ArrayList<Carta> mazzo=new ArrayList<>();
+    ArrayList<Carta> scarti=new ArrayList<>();
+    ArrayList<Giocatore> giocatori=new ArrayList<>();
     Random random = new Random();
     int turno=0;
+    /**
+     *
+     */
     public Partita(){
 //        preparativi();
         printState();
@@ -63,6 +65,12 @@ public class Partita {
 //            giocatori.get((i+turno)%(giocatori.size())).pesca(this,4+((i+1)/2));
 //        }
 //    }
+    /**
+     *
+     * @param temp1
+     * @param temp2
+     * @return
+     */
     public Giocatore editGiocatore(ArrayList<Carta> temp1,ArrayList<Giocatore> temp2){
         int rnd1=random.nextInt(temp1.size());
         int rnd2=random.nextInt(temp2.size());
@@ -72,8 +80,10 @@ public class Partita {
         temp1.remove(rnd1);
         return temp;
     }
+    /**
+     *
+     */
     public void printState(){
-        System.out.println("/////////////////// Turno " + turno+ " /////////////////////////////");
         for(int i=0;i<giocatori.size();i++){
             Giocatore t=giocatori.get(i);
 //            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
@@ -82,4 +92,5 @@ public class Partita {
 //            }
         }
     }
+    private static final Logger LOG = Logger.getLogger(Partita.class.getName());
 }

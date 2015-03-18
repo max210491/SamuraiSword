@@ -7,15 +7,16 @@ package samuraysword;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Logger;
 import samuraysword.carte.Ruolo;
 
 public class Giocatore {
     public String nome;
     public Ruolo ruolo;
-    public ArrayList<Carta> mano =new ArrayList<Carta>();
+    public ArrayList<Carta> mano =new ArrayList<>();
     public int resistenza;
     public int resistenzaMax;
-    ArrayList<Carta> Buff =new ArrayList<Carta>();
+    ArrayList<Carta> Buff =new ArrayList<>();
     Random random = new Random();
     public Giocatore(String s){
         nome=s;
@@ -31,4 +32,5 @@ public class Giocatore {
         pesca(p,2);
         p.turno=(p.turno+1)%p.giocatori.size();
     }
+    private static final Logger LOG = Logger.getLogger(Giocatore.class.getName());
 }
