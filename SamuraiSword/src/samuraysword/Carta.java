@@ -14,4 +14,8 @@ public class Carta {
     public Carta(String s){
         nome=s;
     }
+    @Override
+    public String toString(){
+        return nome;
+    }
 }
