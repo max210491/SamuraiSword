@@ -5,7 +5,7 @@
 package samuraysword.carte;
 
 import samuraysword.Carta;
-import samuraysword.partita.SkillCallback;
+import samuraysword.callback.Callback;
 
 /**
  * La classe personaggio è più complicata in quanto ogni personaggio ha le sue
@@ -13,15 +13,13 @@ import samuraysword.partita.SkillCallback;
  * 
  * @author Simo
  */
-public abstract class Personaggio implements Carta, SkillCallback{
+public abstract class Personaggio implements Carta, Callback {
 
-    private String descrizione;
-    private final int resistenzaMax;
-    private int resistenza;
+    private final String descrizione;
+    private final int resistenza;
     
     public Personaggio(int resistenza, String descrizione){
         this.resistenza = resistenza;
-        this.resistenzaMax = resistenza;
         this.descrizione = descrizione;
     }
     
@@ -34,18 +32,8 @@ public abstract class Personaggio implements Carta, SkillCallback{
         return resistenza;
     }
 
-    public void setResistenza(int vita) {
-        this.resistenza = vita;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
-
-    public int getResistenzaMax() {
-        return resistenzaMax;
-    }
-    
-    
  
 }

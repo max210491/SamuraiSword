@@ -7,11 +7,11 @@ package samuraysword.carte.personaggio;
 
 import java.util.ArrayList;
 import samuraysword.Carta;
-import samuraysword.Giocatore;
+import samuraysword.partita.Giocatore;
 import samuraysword.Partita;
 import samuraysword.carte.Personaggio;
 import samuraysword.carte.Ruolo;
-import samuraysword.partita.ComplexAction;
+import samuraysword.partita.CallbackManager;
 
 /**
  *
@@ -20,7 +20,7 @@ import samuraysword.partita.ComplexAction;
 public class Benkei extends Personaggio {
 
     public Benkei() {
-        super(5, "Non ho idea della descrizione");
+        super(5, "Tutti gli altri giocatori hanno Difficoltà +1 quando ti attaccano.");
     }
 
     @Override
@@ -29,12 +29,14 @@ public class Benkei extends Personaggio {
     }
 
     @Override
-    public void runCallback(Partita p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean execute(Partita p) {
+        /*
+         * 
+         */
     }
 
     @Override
-    public ComplexAction.tipoAzione getTipoCall() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public CallbackManager.calType getCalbackType() {
+        return CallbackManager.calType.CHOSE_TARGET;
     }
 }

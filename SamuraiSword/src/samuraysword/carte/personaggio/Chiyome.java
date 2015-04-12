@@ -7,7 +7,7 @@ package samuraysword.carte.personaggio;
 
 import java.util.ArrayList;
 import samuraysword.Carta;
-import samuraysword.Giocatore;
+import samuraysword.partita.Giocatore;
 import samuraysword.Partita;
 import samuraysword.carte.Personaggio;
 import samuraysword.carte.Ruolo;

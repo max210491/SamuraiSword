@@ -13,9 +13,8 @@ import samuraysword.carte.Ruolo;
  */
 public class Ronin extends Ruolo{
 
-    public Ronin(int onoreIniziale){
-        super(onoreIniziale);
-        
+    public Ronin(){
+        super(type.RONIN); 
     }
     
     @Override

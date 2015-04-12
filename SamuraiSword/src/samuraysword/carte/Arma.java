@@ -11,16 +11,32 @@ import samuraysword.Carta;
  *
  * @author Mirko
  */
-public class Arma extends Carta {
-    public int danno=0;
-    public int distanza=0;
-    public Arma(String s,int distanzaI, int dannoI) {
-        super(s);
-        danno=dannoI;
-        distanza=distanzaI;
+public abstract class Arma implements Carta {
+
+    private final int danno;
+    private final int distanza;
+    private final String descrizione;
+
+    public Arma(String descrizione, int distanza, int danno) {
+        this.descrizione = descrizione;
+        this.danno = danno;
+        this.distanza = distanza;
     }
+
     @Override
-    public String toString(){
-        return "ARMA "+nome+" Dist:"+distanza+" Danno:"+danno;
+    public tipo getTipo() {
+        return Carta.tipo.ARMA;
+    }
+
+    public int getDanno() {
+        return danno;
+    }
+
+    public int getDistanza() {
+        return distanza;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
     }
 }

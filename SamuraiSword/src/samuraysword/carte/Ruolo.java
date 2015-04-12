@@ -15,14 +15,16 @@ import samuraysword.*;
  */
 public abstract class Ruolo implements Carta{
     
-    private int onore;
+    public static enum type {RONIN, NINJA, SAMURAI, SHOGUN};
+    
+    private final type classe;
     
     /**
      * Il costruttore
      * @param onore iniziale del ruolo durante la partita
      */
-    public Ruolo(int onore){
-        this.onore = onore;
+    public Ruolo(type classe){
+        this.classe = classe;
     }
 
     @Override
@@ -30,14 +32,8 @@ public abstract class Ruolo implements Carta{
         return Carta.tipo.RUOLO;
     }
 
-    public int getOnore() {
-        return onore;
+    public type getClasse() {
+        return classe;
     }
 
-    public void setOnore(int onore) {
-        this.onore = onore;
-    }
-    
-    
-    
 }
