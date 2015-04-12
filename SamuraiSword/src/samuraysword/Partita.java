@@ -91,6 +91,7 @@ public class Partita {
 //                System.out.println("\t"+t.mano.get(j).nome);
 //            }
         }
+        return s;
     }
     private static final Logger LOG = Logger.getLogger(Partita.class.getName());
 }
