@@ -5,27 +5,31 @@
  */
 package samuraysword.carte;
 
-import samuraysword.Carta;
+import CGCore.interfaces.Carta;
+import CGCore.interfaces.CartaConDescrizione;
+import CGCore.interfaces.TipoCarta;
 
 /**
  *
  * @author Mirko
  */
-public abstract class Arma implements Carta {
+public abstract class Arma implements CartaConDescrizione {
 
     private final int danno;
     private final int distanza;
     private final String descrizione;
+    private final TipoCarta tipo;
 
-    public Arma(String descrizione, int distanza, int danno) {
+    public Arma(TipoCarta tipo, String descrizione, int distanza, int danno) {
         this.descrizione = descrizione;
         this.danno = danno;
         this.distanza = distanza;
+        this.tipo = tipo;
     }
 
     @Override
-    public tipo getTipo() {
-        return Carta.tipo.ARMA;
+    public TipoCarta getTipo() {
+        return tipo;
     }
 
     public int getDanno() {

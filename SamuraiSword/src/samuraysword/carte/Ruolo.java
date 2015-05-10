@@ -5,6 +5,8 @@
  */
 package samuraysword.carte;
 
+import CGCore.interfaces.Carta;
+import CGCore.interfaces.TipoCarta;
 import samuraysword.*;
 
 /**
@@ -18,18 +20,20 @@ public abstract class Ruolo implements Carta{
     public static enum type {RONIN, NINJA, SAMURAI, SHOGUN};
     
     private final type classe;
+    private final TipoCarta tipo;
     
     /**
      * Il costruttore
      * @param onore iniziale del ruolo durante la partita
      */
-    public Ruolo(type classe){
+    public Ruolo(TipoCarta tipo, type classe){
         this.classe = classe;
+        this.tipo = tipo;
     }
 
     @Override
-    public tipo getTipo() {
-        return Carta.tipo.RUOLO;
+    public TipoCarta getTipo() {
+        return tipo;
     }
 
     public type getClasse() {

@@ -6,7 +6,7 @@
 package samuraysword.carte.personaggio;
 
 import java.util.ArrayList;
-import samuraysword.Carta;
+import CGCore.interfaces.Carta;
 import samuraysword.partita.Giocatore;
 import samuraysword.Partita;
 import samuraysword.carte.Personaggio;

@@ -4,7 +4,7 @@
  */
 package samuraysword.partita;
 
-import samuraysword.Carta;
+import CGCore.interfaces.Carta;
 import samuraysword.Partita;
 import samuraysword.callback.Callback;
 

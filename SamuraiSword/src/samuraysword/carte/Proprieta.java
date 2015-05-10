@@ -4,23 +4,27 @@
  */
 package samuraysword.carte;
 
-import samuraysword.Carta;
+import CGCore.interfaces.Carta;
+import CGCore.interfaces.CartaConDescrizione;
+import CGCore.interfaces.TipoCarta;
 
 /**
  *
  * @author Simo
  */
-public abstract class Proprieta implements Carta{
+public abstract class Proprieta implements CartaConDescrizione{
     
     private final String descrizione;
+    private final TipoCarta tipo;
     
-    public Proprieta(String descrizione){
+    public Proprieta(TipoCarta tipo, String descrizione){
         this.descrizione = descrizione;
+        this.tipo = tipo;
     }
     
     @Override
-    public tipo getTipo() {
-        return Carta.tipo.SUPPORTO;
+    public TipoCarta getTipo() {
+        return tipo;
     }
 
     public String getDescrizione() {

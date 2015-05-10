@@ -4,7 +4,9 @@
  */
 package samuraysword.carte;
 
-import samuraysword.Carta;
+import CGCore.interfaces.Carta;
+import CGCore.interfaces.CartaConDescrizione;
+import CGCore.interfaces.TipoCarta;
 import samuraysword.callback.Callback;
 
 /**
@@ -13,19 +15,21 @@ import samuraysword.callback.Callback;
  * 
  * @author Simo
  */
-public abstract class Personaggio implements Carta, Callback {
+public abstract class Personaggio implements CartaConDescrizione, Callback {
 
     private final String descrizione;
     private final int resistenza;
+    private final TipoCarta tipo;
     
-    public Personaggio(int resistenza, String descrizione){
+    public Personaggio(TipoCarta tipo, int resistenza, String descrizione){
         this.resistenza = resistenza;
         this.descrizione = descrizione;
+        this.tipo = tipo;
     }
     
     @Override
-    public tipo getTipo() {
-        return Carta.tipo.PERSONAGGIO;
+    public TipoCarta getTipo() {
+        return tipo;
     }
 
     public int getResistenza() {

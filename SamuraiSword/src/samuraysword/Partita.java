@@ -5,6 +5,7 @@
  */
 package samuraysword;
 
+import CGCore.interfaces.Carta;
 import samuraysword.partita.Giocatore;
 import java.util.ArrayList;
 import java.util.List;

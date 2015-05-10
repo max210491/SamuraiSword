@@ -4,7 +4,7 @@
  */
 package samuraysword.carte;
 
-import samuraysword.Carta;
+import CGCore.interfaces.Carta;
 
 /**
  *
