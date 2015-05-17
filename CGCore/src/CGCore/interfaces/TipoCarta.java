@@ -5,7 +5,19 @@ package CGCore.interfaces;
  *
  * @author Simone
  */
-public interface TipoCarta {
+public class TipoCarta {
+    
+    private final String nome;
+    private final boolean enabled;
+    
+    public TipoCarta(String nome, boolean enabled){
+        this.nome = nome;
+        this.enabled = enabled;
+    }
+    
+    public TipoCarta(String nome){
+        this(nome, true);
+    }
 
     /**
      * Restituisce in forma leggibile il nome della tipologia di carta. Esempio:
@@ -13,7 +25,9 @@ public interface TipoCarta {
      *
      * @return String contenente il nome della tipologia in forma leggibile.
      */
-    public String getNomeTipo();
+    public String getNome(){
+        return nome;
+    }
 
     /**
      * Restituisce il tipo della carta. Per tipo si intende una String
@@ -22,7 +36,7 @@ public interface TipoCarta {
      *
      * @return String contenente l'identificatore univoco del tipo.
      */
-    public String getTipo();
+//    public String getTipo();
 
     /**
      * Indica se la tipologia di carte è abilitata o meno al gioco. Le carte di
@@ -35,5 +49,7 @@ public interface TipoCarta {
      *
      * @return
      */
-    public boolean abilitatoAlGioco();
+    public boolean isAbilitatoAlGioco(){
+        return enabled;
+    }
 }
