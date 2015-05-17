@@ -6,7 +6,7 @@ package samuraysword.partita;
 
 import CGCore.interfaces.Carta;
 import samuraysword.Partita;
-import samuraysword.callback.Callback;
+import CGCore.interfaces.Callback;
 
 /**
  * Classe che rappresenta le azioni effettuate da un giocatore durante la sua

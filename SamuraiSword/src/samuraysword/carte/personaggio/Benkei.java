@@ -5,13 +5,10 @@
  */
 package samuraysword.carte.personaggio;
 
-import java.util.ArrayList;
-import CGCore.interfaces.Carta;
-import samuraysword.partita.Giocatore;
-import samuraysword.Partita;
+import CGCore.Game;
+import CGCore.interfaces.Callback;
+import CGCore.interfaces.TipoCarta;
 import samuraysword.carte.Personaggio;
-import samuraysword.carte.Ruolo;
-import samuraysword.partita.CallbackManager;
 
 /**
  *
@@ -19,8 +16,8 @@ import samuraysword.partita.CallbackManager;
  */
 public class Benkei extends Personaggio {
 
-    public Benkei() {
-        super(5, "Tutti gli altri giocatori hanno Difficoltà +1 quando ti attaccano.");
+    public Benkei(TipoCarta t) {
+        super(t, 5, "Tutti gli altri giocatori hanno Difficoltà +1 quando ti attaccano.");
     }
 
     @Override
@@ -28,15 +25,31 @@ public class Benkei extends Personaggio {
         return "Benkei";
     }
 
-    @Override
-    public boolean execute(Partita p) {
-        /*
-         * 
-         */
-    }
+//    @Override
+//    public boolean execute(Partita p) {
+//        /*
+//         * 
+//         */
+//    }
+//
+//    @Override
+//    public CallbackManager.calType getCalbackType() {
+//        return CallbackManager.calType.CHOSE_TARGET;
+//    }
 
     @Override
-    public CallbackManager.calType getCalbackType() {
-        return CallbackManager.calType.CHOSE_TARGET;
+    public Callback getCallback() {
+        return new Callback("chooseTarget"){
+
+            @Override
+            public boolean execute(Game game) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public boolean isValidCall(Game game) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
     }
 }

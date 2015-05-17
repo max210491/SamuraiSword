@@ -5,16 +5,15 @@
  */
 package samuraysword;
 
+import CGCore.CallbackManager;
 import CGCore.interfaces.Carta;
 import samuraysword.partita.Giocatore;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
-import samuraysword.callback.Callback;
-import samuraysword.carte.*;
+import CGCore.interfaces.Callback;
 import samuraysword.partita.Action;
-import samuraysword.partita.CallbackManager;
 
 /**
  *
@@ -76,54 +75,54 @@ public class Partita {
 //        }
 //    }
 
-    /**
-     *
-     * @param temp1
-     * @param temp2
-     * @return
-     */
-    public Giocatore editGiocatore(ArrayList<Carta> temp1, ArrayList<Giocatore> temp2) {
-        int rnd1 = random.nextInt(temp1.size());
-        int rnd2 = random.nextInt(temp2.size());
-        Giocatore temp = temp2.get(rnd2);
-        temp2.remove(rnd2);
-//        temp.ruolo=(Ruolo) temp1.get(rnd1);
-        temp1.remove(rnd1);
-        return temp;
-    }
+//    /**
+//     *
+//     * @param temp1
+//     * @param temp2
+//     * @return
+//     */
+//    public Giocatore editGiocatore(ArrayList<Carta> temp1, ArrayList<Giocatore> temp2) {
+//        int rnd1 = random.nextInt(temp1.size());
+//        int rnd2 = random.nextInt(temp2.size());
+//        Giocatore temp = temp2.get(rnd2);
+//        temp2.remove(rnd2);
+////        temp.ruolo=(Ruolo) temp1.get(rnd1);
+//        temp1.remove(rnd1);
+//        return temp;
+//    }
 
-    /**
-     *
-     */
-    public void printState() {
-        for (int i = 0; i < giocatori.size(); i++) {
-            Giocatore t = giocatori.get(i);
-//            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
-//            for(int j=0;j<t.mano.size();j++){
-//                System.out.println("\t"+t.mano.get(j).nome);
-//            }
-        }
-    }
+//    /**
+//     *
+//     */
+//    public void printState() {
+//        for (int i = 0; i < giocatori.size(); i++) {
+//            Giocatore t = giocatori.get(i);
+////            System.out.println(t.nome +  " " + t.ruolo.nome +" " + t.resistenza+ "♥ " + t.ruolo.onore+"♣");
+////            for(int j=0;j<t.mano.size();j++){
+////                System.out.println("\t"+t.mano.get(j).nome);
+////            }
+//        }
+//    }
 
-    private boolean turno(Giocatore g) {
-        if (!faseRecupero(g)) {
-            LOG.severe("Errore durante la fase di Recupero");
-            return false;
-        }
-        if (!fasePesta(g)) {
-            LOG.severe("Errore durante la fase di Pesca");
-            return false;
-        }
-        if (!faseGioca(g)) {
-            LOG.severe("Errore durante la fase di Gioco");
-            return false;
-        }
-        if (!faseScarta(g)) {
-            LOG.severe("Errore durante la fase di Scarta");
-            return false;
-        }
-        return true;
-    }
+//    private boolean turno(Giocatore g) {
+//        if (!faseRecupero(g)) {
+//            LOG.severe("Errore durante la fase di Recupero");
+//            return false;
+//        }
+//        if (!fasePesta(g)) {
+//            LOG.severe("Errore durante la fase di Pesca");
+//            return false;
+//        }
+//        if (!faseGioca(g)) {
+//            LOG.severe("Errore durante la fase di Gioco");
+//            return false;
+//        }
+//        if (!faseScarta(g)) {
+//            LOG.severe("Errore durante la fase di Scarta");
+//            return false;
+//        }
+//        return true;
+//    }
 
     private boolean faseRecupero(Giocatore g) {
         cb.runCallback(CallbackManager.calType.FASE_RECUPERO, this);

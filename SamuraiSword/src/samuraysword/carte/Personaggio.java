@@ -7,7 +7,8 @@ package samuraysword.carte;
 import CGCore.interfaces.Carta;
 import CGCore.interfaces.CartaConDescrizione;
 import CGCore.interfaces.TipoCarta;
-import samuraysword.callback.Callback;
+import CGCore.interfaces.Callback;
+import CGCore.interfaces.HasCallback;
 
 /**
  * La classe personaggio è più complicata in quanto ogni personaggio ha le sue
@@ -15,7 +16,7 @@ import samuraysword.callback.Callback;
  * 
  * @author Simo
  */
-public abstract class Personaggio implements CartaConDescrizione, Callback {
+public abstract class Personaggio implements CartaConDescrizione, HasCallback{
 
     private final String descrizione;
     private final int resistenza;
@@ -36,7 +37,8 @@ public abstract class Personaggio implements CartaConDescrizione, Callback {
         return resistenza;
     }
 
-    public String getDescrizione() {
+    @Override
+    public String getDescription() {
         return descrizione;
     }
  

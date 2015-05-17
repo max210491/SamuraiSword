@@ -4,6 +4,7 @@
  */
 package samuraysword.carte.ruolo;
 
+import CGCore.interfaces.TipoCarta;
 import samuraysword.carte.Ruolo;
 
 /**
@@ -13,8 +14,8 @@ import samuraysword.carte.Ruolo;
  */
 public class Ronin extends Ruolo{
 
-    public Ronin(){
-        super(type.RONIN); 
+    public Ronin(TipoCarta t){
+        super(t, type.RONIN); 
     }
     
     @Override
