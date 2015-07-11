@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package samuraysword.carte;
+package samuraysword.carte.interfaces;
 
 import CGCore.interfaces.Carta;
 import CGCore.interfaces.TipoCarta;
@@ -20,20 +20,18 @@ public abstract class Ruolo implements Carta{
     public static enum type {RONIN, NINJA, SAMURAI, SHOGUN};
     
     private final type classe;
-    private final TipoCarta tipo;
     
     /**
      * Il costruttore
      * @param onore iniziale del ruolo durante la partita
      */
-    public Ruolo(TipoCarta tipo, type classe){
+    public Ruolo(type classe){
         this.classe = classe;
-        this.tipo = tipo;
     }
 
     @Override
     public TipoCarta getTipo() {
-        return tipo;
+        return SamuraySword.RUOLO;
     }
 
     public type getClasse() {

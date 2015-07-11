@@ -8,7 +8,7 @@ package samuraysword.carte.personaggio;
 import CGCore.Game;
 import CGCore.interfaces.Callback;
 import CGCore.interfaces.TipoCarta;
-import samuraysword.carte.Personaggio;
+import samuraysword.carte.interfaces.Personaggio;
 //import samuraysword.partita.ComplexAction;
 
 /**
@@ -17,8 +17,8 @@ import samuraysword.carte.Personaggio;
  */
 public class Chiyome extends Personaggio {
         String personaggio;
-        public Chiyome(TipoCarta t){
-            super(t, 4, "Può essere ferita solo da armi");
+        public Chiyome(){
+            super(4, "Può essere ferita solo da armi");
         }
 
     @Override

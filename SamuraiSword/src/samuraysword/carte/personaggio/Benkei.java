@@ -8,7 +8,8 @@ package samuraysword.carte.personaggio;
 import CGCore.Game;
 import CGCore.interfaces.Callback;
 import CGCore.interfaces.TipoCarta;
-import samuraysword.carte.Personaggio;
+import samuraysword.SamuraySword;
+import samuraysword.carte.interfaces.Personaggio;
 
 /**
  *
@@ -16,8 +17,8 @@ import samuraysword.carte.Personaggio;
  */
 public class Benkei extends Personaggio {
 
-    public Benkei(TipoCarta t) {
-        super(t, 5, "Tutti gli altri giocatori hanno Difficoltà +1 quando ti attaccano.");
+    public Benkei() {
+        super(5, "Tutti gli altri giocatori hanno Difficoltà +1 quando ti attaccano.");
     }
 
     @Override
@@ -39,7 +40,7 @@ public class Benkei extends Personaggio {
 
     @Override
     public Callback getCallback() {
-        return new Callback("chooseTarget"){
+        return new Callback(SamuraySword.chooseTarget){
 
             @Override
             public boolean execute(Game game) {

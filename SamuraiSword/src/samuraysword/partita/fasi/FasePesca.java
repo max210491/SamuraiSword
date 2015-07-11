@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package samuraysword.partita;
+package samuraysword.partita.fasi;
 
 import CGCore.Game;
 import CGCore.Phase;
@@ -10,6 +10,7 @@ import CGCore.Player;
 import CGCore.interfaces.Carta;
 import java.util.List;
 import java.util.Map;
+import samuraysword.SamuraySword;
 
 /**
  *
@@ -37,7 +38,7 @@ public class FasePesca extends Phase {
         p.addCards(l);
 
         //infine lancio le callback per eseguire i codici relativi alle carte
-        cbm.runCallback("pescaDueCarte", g);
+        cbm.runCallback(SamuraySword.pescaDueCarte, g);
 
     }
 

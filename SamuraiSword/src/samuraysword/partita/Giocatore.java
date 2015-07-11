@@ -12,11 +12,13 @@ import java.util.Random;
 import java.util.logging.Logger;
 import CGCore.interfaces.Carta;
 import samuraysword.Partita;
-import samuraysword.carte.Ruolo;
+import samuraysword.carte.interfaces.Ruolo;
+import samuraysword.carte.interfaces.Personaggio;
 
 public class Giocatore extends Player{
     
     private Ruolo ruolo;
+    private Personaggio personaggio;
     private int resistenza;
     private int onore;
     private List<Carta> buff =new ArrayList<>();
@@ -103,6 +105,14 @@ public class Giocatore extends Player{
 
     public void setResistenza(int resistenza) {
         this.resistenza = resistenza;
+    }
+
+    public Personaggio getPersonaggio() {
+        return personaggio;
+    }
+
+    public void setPersonaggio(Personaggio personaggio) {
+        this.personaggio = personaggio;
     }
     
     private static final Logger LOG = Logger.getLogger(Giocatore.class.getName());

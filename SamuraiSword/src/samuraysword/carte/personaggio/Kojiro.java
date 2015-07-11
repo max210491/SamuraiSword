@@ -8,7 +8,7 @@ import CGCore.Game;
 import CGCore.interfaces.Callback;
 import CGCore.interfaces.TipoCarta;
 import samuraysword.Partita;
-import samuraysword.carte.Personaggio;
+import samuraysword.carte.interfaces.Personaggio;
 //import samuraysword.partita.ComplexAction;
 
 /**
@@ -17,8 +17,8 @@ import samuraysword.carte.Personaggio;
  */
 public class Kojiro extends Personaggio{
     
-    public Kojiro(TipoCarta t){
-        super(t, 5, "Le tue armi possono attaccare a qualsiasi difficoltà");
+    public Kojiro(){
+        super(5, "Le tue armi possono attaccare a qualsiasi difficoltà");
     }
 
     @Override
