@@ -24,7 +24,7 @@ public abstract class Callback {
     /**
      * Metodo principale eseguito quando la callback viene chiamata e risulta
      * valida.
-     *
+     * 
      * @param game La partita correntemente attiva
      * @return boolean che indica il successo della chiamata
      */

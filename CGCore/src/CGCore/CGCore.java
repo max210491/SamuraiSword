@@ -52,15 +52,16 @@ public class CGCore {
         this.status = status.INIT;
         this.tipiCarte = new HashMap<>();
         this.callbackManager = new CallbackManager();
-        this.game = new Game(this);
         this.cardManager = new CardManager(this);
     }
     
-    public void init(){
+    public void init(Game g){
         if(this.status!=status.INIT){
             throw new CGIllegalStateException("La init del CGCore può essere chiamata solo una volta.");
         }
         status = status.LOAD;
+        this.game = g;
+        g.registerCGCore(this);
         cardManager.init();
         
         

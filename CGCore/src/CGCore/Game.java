@@ -15,17 +15,20 @@ import java.util.List;
 public class Game {
     
     private List<Phase> phase;
-    private final CGCore core;
+    private CGCore core;
     private int activePlayer;
     private List<Player> players;
     private List<Carta> mazzo;
     private List<Carta> scarti;
     
-    public Game(CGCore core){
-        this.core = core;
+    public Game(){
         this.phase = new ArrayList<>();
         this.activePlayer = 0;
         this.players = new ArrayList<>();
+    }
+    
+    protected void registerCGCore(CGCore core){
+        this.core = core;
     }
     
     public void addPlayer(Player p){
@@ -34,6 +37,16 @@ public class Game {
     
     public Player getPlayer(int i){
         return players.get(i);
+    }
+    
+    public List<Player> getPlayers(){
+        return players;
+    }
+    
+    public List<Player> getInactivePlayers(){
+        List<Player> l = new ArrayList<>(players);
+        l.remove(activePlayer);
+        return l;
     }
     
     public Player getActivePlayer(){
